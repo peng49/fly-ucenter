@@ -1,26 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <Center msg="Hello World"/>
+  <layout/>
 </template>
 
 <script>
-import Center from './components/Center.vue'
+import Layout from './components/Layout.vue'
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/css/bootstrap-grid.min.css"
+import "bootstrap/dist/css/bootstrap-reboot.min.css"
+import "bootstrap/dist/css/bootstrap-utilities.min.css"
+
+
+import "bootstrap/dist/js/bootstrap.js"
 
 export default {
   name: 'App',
-  components: {
-    Center
+  components: {    
+    Layout
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
 }
 </style>
