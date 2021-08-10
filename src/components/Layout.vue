@@ -1,145 +1,27 @@
 <template>
-  <header>
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Fixed navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-          aria-controls="navbarCollapse"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-                >Disabled</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <Header></Header>
   <main>
-    <div class="flex-shrink-0 p-3 bg-white" style="width: 280px">
-      <a
-        href="/"
-        class="
-          d-flex
-          align-items-center
-          pb-3
-          mb-3
-          link-dark
-          text-decoration-none
-          border-bottom
-        "
-      >
-        <svg class="bi me-2" width="30" height="24">
-          <use xlink:href="#bootstrap"></use>
-        </svg>
-        <span class="fs-5 fw-semibold">Collapsible</span>
-      </a>
-      <ul class="list-unstyled ps-0">
-        <li class="mb-1">
-          <button
-            class="btn btn-toggle align-items-center rounded collapsed"
-            data-bs-toggle="collapse"
-            data-bs-target="#dashboard-collapse"
-            aria-expanded="false"
-          >
-            Dashboard
-          </button>
-          <div class="collapse" id="dashboard-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-dark rounded">Overview</a></li>
-              <li><a href="#" class="link-dark rounded">Weekly</a></li>
-              <li><a href="#" class="link-dark rounded">Monthly</a></li>
-              <li><a href="#" class="link-dark rounded">Annually</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="mb-1">
-          <button
-            class="btn btn-toggle align-items-center rounded collapsed"
-            data-bs-toggle="collapse"
-            data-bs-target="#manager-collapse"
-            aria-expanded="false"
-          >
-            管理
-          </button>
-          <div class="collapse" id="manager-collapse" style="">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-dark rounded">内容管理</a></li>
-              <li><a href="#" class="link-dark rounded">评论管理</a></li>
-              <li><a href="#" class="link-dark rounded">消息管理</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="mb-1">
-          <button
-            class="btn btn-toggle align-items-center rounded collapsed"
-            data-bs-toggle="collapse"
-            data-bs-target="#orders-collapse"
-            aria-expanded="false"
-          >
-            Orders
-          </button>
-          <div class="collapse" id="orders-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-dark rounded">New</a></li>
-              <li><a href="#" class="link-dark rounded">Processed</a></li>
-              <li><a href="#" class="link-dark rounded">Shipped</a></li>
-              <li><a href="#" class="link-dark rounded">Returned</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="border-top my-3"></li>
-        <li class="mb-1">
-          <button
-            class="btn btn-toggle align-items-center rounded collapsed"
-            data-bs-toggle="collapse"
-            data-bs-target="#account-collapse"
-            aria-expanded="false"
-          >
-            Account
-          </button>
-          <div class="collapse" id="account-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-dark rounded">New...</a></li>
-              <li><a href="#" class="link-dark rounded">Profile</a></li>
-              <li><a href="#" class="link-dark rounded">Settings</a></li>
-              <li><a href="#" class="link-dark rounded">Sign out</a></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div>
+    <Sidebar />
 
     <div class="row bg-white">
-        <div class="container">
-123123
-        </div>
-            
+      <div class="container">123123</div>
     </div>
   </main>
 </template>
+
+<script>
+import Header from "./common/Header.vue";
+import Sidebar from "./common/Sidebar.vue";
+
+export default {
+  name: "Layout",
+  components: {
+    Header,
+    Sidebar,
+  },
+};
+</script>
+
 
 
 <style scoped>
