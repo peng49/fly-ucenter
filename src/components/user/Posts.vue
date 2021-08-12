@@ -69,10 +69,14 @@
   padding-right: 15px;
 }
 
-small {
-  color: #999aaa;
+.nav-link {
+  color: #555666;
 }
 
+.nav-link.active {
+  font-weight: 600;
+  border-bottom: 2px solid black;
+}
 .list-group-item {
   border: none;
   border-bottom: 1px dotted #ddd;
@@ -83,13 +87,7 @@ small {
   font-weight: 500;
   color: #555666;
 }
-
-.nav-link {
-  color: #555666;
-}
-
-.nav-link.active {
-  font-weight: 600;
-  border-bottom: 2px solid black;
+.list-group-item small {
+  color: #999aaa;
 }
 </style>
