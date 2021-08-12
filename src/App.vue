@@ -14,14 +14,22 @@ import "bootstrap/dist/js/bootstrap.js"
 
 export default {
   name: 'App',
-  components: {    
+  components: {
     Layout
   }
 }
 </script>
 
 <style>
+body {
+  background: #f5f6f7 !important;
+}
+
+a {
+  text-decoration: none;;
+}
+
 #app {
-  margin-top: 60px;
+  margin-top: 75px;
 }
 </style>

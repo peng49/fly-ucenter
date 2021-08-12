@@ -1,112 +1,35 @@
 <template>
-        <div class="flex-shrink-0 p-3 bg-white" style="width: 280px">
-      <a
-        href="/"
-        class="
-          d-flex
-          align-items-center
-          pb-3
-          mb-3
-          link-dark
-          text-decoration-none
-          border-bottom
-        "
-      >
-        <svg class="bi me-2" width="30" height="24">
-          <use xlink:href="#bootstrap"></use>
-        </svg>
-        <span class="fs-5 fw-semibold">Collapsible</span>
-      </a>
-      <ul class="list-unstyled ps-0">
-        <li class="mb-1">
-          <a class="link-dark rounded" href="">首页</a>
-        </li>
-        <li class="mb-1">
-          <button
+  <div class="sidebar" style="width:280px">
+    <ul class="list-unstyled ps-0">
+      <li class="mb-1">
+        <a class="link-dark rounded" href="">首页</a>
+      </li>
+
+      <li class="mb-1">
+        <button
             class="btn btn-toggle align-items-center rounded collapsed"
             data-bs-toggle="collapse"
             data-bs-target="#manager-collapse"
             aria-expanded="false"
-          >
-            管理
-          </button>
-          <div class="collapse" id="manager-collapse" style="">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-dark rounded">内容管理</a></li>
-              <li><a href="#" class="link-dark rounded">评论管理</a></li>
-              <li><a href="#" class="link-dark rounded">消息管理</a></li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="border-top my-3"></li>
-        <li class="mb-1">
-          <button
-            class="btn btn-toggle align-items-center rounded collapsed"
-            data-bs-toggle="collapse"
-            data-bs-target="#account-collapse"
-            aria-expanded="false"
-          >
-            Account
-          </button>
-          <div class="collapse" id="account-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-dark rounded">New...</a></li>
-              <li><a href="#" class="link-dark rounded">Profile</a></li>
-              <li><a href="#" class="link-dark rounded">Settings</a></li>
-              <li><a href="#" class="link-dark rounded">Sign out</a></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div>
+        >
+          管理
+        </button>
+        <div class="collapse" id="manager-collapse" style="">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">内容管理</a></li>
+            <li><a href="#" class="link-dark rounded">评论管理</a></li>
+            <li><a href="#" class="link-dark rounded">消息管理</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 
-
 <style>
-body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-}
-
-html {
-  height: -webkit-fill-available;
-}
-
-main {
-  display: flex;
-  flex-wrap: nowrap;
-  height: 100vh;
-  height: -webkit-fill-available;
-  max-height: 100vh;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-.b-example-divider {
-  flex-shrink: 0;
-  width: 1.5rem;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.1);
-  border: solid rgba(0, 0, 0, 0.15);
-  border-width: 1px 0;
-  box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
-    inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
-}
-
-.bi {
-  vertical-align: -0.125em;
-  pointer-events: none;
-  fill: currentColor;
-}
-
-.dropdown-toggle {
-  outline: 0;
-}
-
-.nav-flush .nav-link {
-  border-radius: 0;
+.sidebar{
+  padding: 15px;
 }
 
 .btn-toggle {
@@ -118,6 +41,7 @@ main {
   background-color: transparent;
   border: 0;
 }
+
 .btn-toggle:hover,
 .btn-toggle:focus {
   color: rgba(0, 0, 0, 0.85);
@@ -135,6 +59,7 @@ main {
 .btn-toggle[aria-expanded="true"] {
   color: rgba(0, 0, 0, 0.85);
 }
+
 .btn-toggle[aria-expanded="true"]::before {
   transform: rotate(90deg);
 }
@@ -146,19 +71,10 @@ main {
   margin-left: 1.25rem;
   text-decoration: none;
 }
+
 .btn-toggle-nav a:hover,
 .btn-toggle-nav a:focus {
   background-color: #d2f4ea;
 }
 
-.scrollarea {
-  overflow-y: auto;
-}
-
-.fw-semibold {
-  font-weight: 600;
-}
-.lh-tight {
-  line-height: 1.25;
-}
 </style>
