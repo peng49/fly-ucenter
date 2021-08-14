@@ -56,7 +56,7 @@
       </div>
       <!--  分页    -->
       <div class="row pt-5">
-      <Pagination :page=1 :total=1000 />
+      <Pagination :page=1 :total="1000" />
       </div>
     </div>
   </div>
