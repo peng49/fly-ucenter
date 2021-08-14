@@ -18,7 +18,7 @@
           <i class="fa fa-line-chart"></i>
           管理
         </a>
-        <div class="collapse" id="manager-collapse">
+        <div class="collapse show" id="manager-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li>
               <router-link class="link-dark rounded" to="/user/posts"
