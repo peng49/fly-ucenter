@@ -55,12 +55,27 @@
         </div>
       </div>
       <!--  分页    -->
+      <div class="row pt-5">
+      <Pagination :page=1 :total=1000 />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Pagination from '../common/Pagination'
 
+export default {
+  name:"Posts",
+  components:{
+    Pagination
+  },  
+  data(){
+    return {
+
+    }
+  }
+}
 </script>
 
 <style scoped>
