@@ -1,9 +1,9 @@
 <template>
   <Header></Header>
   <main>
-    <Sidebar/>
+    <Sidebar />
     <div class="container-fluid bg-white p-4">
-        <Posts/>
+      <router-view :key="key" />
     </div>
   </main>
 </template>
@@ -11,14 +11,18 @@
 <script>
 import Header from "./common/Header.vue";
 import Sidebar from "./common/Sidebar.vue";
-import Posts from "./user/Posts"
 
 export default {
   name: "Layout",
   components: {
     Header,
     Sidebar,
-    Posts
+  },
+  computed: {
+    key() {
+      console.log(this.$route)
+      return this.$route.path;
+    },
   },
 };
 </script>

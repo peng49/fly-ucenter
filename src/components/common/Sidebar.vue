@@ -16,9 +16,11 @@
         </button>
         <div class="collapse" id="manager-collapse" style="">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">内容管理</a></li>
-            <li><a href="#" class="link-dark rounded">评论管理</a></li>
-            <li><a href="#" class="link-dark rounded">消息管理</a></li>
+              <li>  
+                <router-link class="link-dark rounded" to="/user/posts">内容管理</router-link>          
+              </li>
+              <li><a href="#" class="link-dark rounded">评论管理</a></li>
+              <li><a href="#" class="link-dark rounded">消息管理</a></li>
           </ul>
         </div>
       </li>
