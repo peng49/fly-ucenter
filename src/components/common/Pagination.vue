@@ -15,12 +15,12 @@
         :class="{ active: item.page == page }"
         aria-current="page"
       >
-        <a v-if="item.page > 0" class="page-link" href="{{ item.link }}">{{
+        <a v-if="item.page > 0" class="page-link" href="javascript:">{{
           item.page
         }}</a>
         <span v-else class="page-link">...</span>
       </li>
-      <li v-if="next_link" class="page-item">
+      <li v-if="pageCount > page" class="page-item">
         <a class="page-link" :href="next_link" rel="next">&rsaquo;</a>
       </li>
       <li v-else class="page-item disabled" aria-disabled="true">
@@ -41,17 +41,17 @@ export default {
   },
   created() {
     let pageSize = 10;
-    let pageCount = Math.ceil(this.total / pageSize);
+    this.pageCount = Math.ceil(this.total / pageSize);
     let items = [];
 
-    for (let start = 1; start <= pageCount; start++) {
+    for (let start = 1; start <= this.pageCount; start++) {
       items.push({ page: start, link: "/page=" + start });
       if (this.page <= 6) {
         if (items.length == 8) {
           items.push({ page: "...", link: "" });
-          start = pageCount - 2;
+          start = this.pageCount - 2;
         }
-      } else if (6 < this.page < pageCount - 6) {
+      } else if (6 < this.page < this.pageCount - 6) {
         if (items.length == 2) {
           items.push({ page: 0, link: "" });
           start = this.page - 4;
@@ -59,7 +59,7 @@ export default {
 
         if (items.length == 10) {
           items.push({ page: 0, link: "" });
-          start = pageCount - 2;
+          start = this.pageCount - 2;
         }
       } else {
         if (items.length == 2) {
@@ -75,6 +75,7 @@ export default {
   data() {
     return {
       page: 10,
+      pageCount:1,
       items: [{ page: 2, link: "/" }],
     };
   },
