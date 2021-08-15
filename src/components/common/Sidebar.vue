@@ -13,7 +13,7 @@
           class="btn-toggle link-dark rounded collapsed"
           data-bs-toggle="collapse"
           data-bs-target="#manager-collapse"
-          aria-expanded="false"
+          aria-expanded="true"
         >
           <i class="fa fa-line-chart"></i>
           管理
@@ -57,6 +57,21 @@ a {
   display: block;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.btn-toggle:after{
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f105";   
+    display: block;
+    float: right;
+    margin-right: 15px;
+    line-height: 40px;
+    transition: all 0.3s ease .1s;
+    -webkit-transition: all 0.3s ease .1s;
+    transform: rotate(-90deg);
+}
+.btn-toggle[aria-expanded=false]:after{
+    transform: rotate(90deg);
 }
 
 .btn-toggle-nav a {

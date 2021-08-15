@@ -9,8 +9,12 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.9.3",
+    "@toast-ui/editor": "^3.0.2",
+    "@toast-ui/editor-plugin-code-syntax-highlight": "^3.0.0",
     "bootstrap": "^5.1.0",
+    "codemirror": "^5.62.2",
     "core-js": "^3.6.5",
+    "editor.md": "github:pandao/editor.md",
     "font-awesome": "^4.7.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.11"

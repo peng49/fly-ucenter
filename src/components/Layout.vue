@@ -26,10 +26,14 @@ export default {
   },
 };
 </script>
+
 <style>
 main {
   display: flex;
   min-height: 500px;
+}
+#app {
+  margin-top: 75px;
 }
 </style>
 

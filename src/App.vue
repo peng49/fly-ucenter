@@ -29,8 +29,4 @@ body {
 a {
   text-decoration: none;;
 }
-
-#app {
-  margin-top: 75px;
-}
 </style>

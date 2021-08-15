@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App'
 
 import Layout from './components/Layout'
+import PostEdit from './view/post/edit'
 
 import { createRouter, createWebHashHistory } from 'vue-router'
 
@@ -17,6 +18,11 @@ const routes = [
             }
         ]
     },
+    {
+        path: '/post/edit',
+        component: PostEdit
+    },
+
 ]
 
 const router = createRouter({
