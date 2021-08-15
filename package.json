@@ -16,6 +16,7 @@
     "core-js": "^3.6.5",
     "editor.md": "github:pandao/editor.md",
     "font-awesome": "^4.7.0",
+    "prettify": "^0.1.7",
     "vue": "^3.0.0",
     "vue-router": "^4.0.11"
   },
