@@ -9,9 +9,9 @@
         default-active="1"
         @open="handleOpen"
         @close="handleClose"
-        route="true"
+        router
       >
-        <el-menu-item index="1">
+        <el-menu-item index="/">
           <el-icon><icon-menu /></el-icon>
           <span>首页</span>
         </el-menu-item>
