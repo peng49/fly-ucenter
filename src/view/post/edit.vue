@@ -26,8 +26,6 @@ import "@toast-ui/editor/dist/toastui-editor.css";
 
 import { Editor } from "@toast-ui/editor";
 
-import helper from "prettify"
-
 function CodeMirrorPlugin() {
   return {
     toHTMLRenderers: {
