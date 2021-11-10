@@ -1,5 +1,5 @@
 <template>
-  <div id="sidebar">
+  <div id="sidebar" style="padding:24px 0 0 24px">
     <el-menu
       text-color="#black"
       active-text-color="black"

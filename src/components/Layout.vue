@@ -5,7 +5,9 @@
   <el-row>
     <el-col :span="3"><Sidebar /></el-col>
     <el-col :span="21">
-      <router-view :key="key" />
+      <main style="padding:24px 0 0 24px">
+        <router-view :key="key" />
+      </main>
     </el-col>
   </el-row>
 </template>
