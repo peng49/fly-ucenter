@@ -3,16 +3,7 @@
 </template>
 
 <script>
-
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap/dist/css/bootstrap-grid.min.css"
-import "bootstrap/dist/css/bootstrap-reboot.min.css"
-import "bootstrap/dist/css/bootstrap-utilities.min.css"
-
-import 'font-awesome/css/font-awesome.min.css'
-
-import "bootstrap/dist/js/bootstrap.js"
-
+// import "bootstrap/dist/css/bootstrap.min.css"
 export default {
   name: 'App',
   components: {

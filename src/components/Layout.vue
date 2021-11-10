@@ -1,11 +1,13 @@
 <template>
-  <Header></Header>
-  <main>
-    <Sidebar />
-    <div class="container-fluid bg-white p-4">
+  <el-row>
+    <el-col :span="24"><Header></Header></el-col>
+  </el-row>
+  <el-row>
+    <el-col :span="3"><Sidebar /></el-col>
+    <el-col :span="21">
       <router-view :key="key" />
-    </div>
-  </main>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
@@ -20,21 +22,13 @@ export default {
   },
   computed: {
     key() {
-      console.log(this.$route)
+      console.log(this.$route);
       return this.$route.path;
     },
   },
 };
 </script>
 
-<style>
-main {
-  display: flex;
-  min-height: 500px;
-}
-#app {
-  margin-top: 75px;
-}
-</style>
+
 
 

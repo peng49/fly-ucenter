@@ -1,84 +1,82 @@
 <template>
-  <div class="row">
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link p-1 active" href="#">我的文章</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link p-1" href="#">收藏文章</a>
-      </li>
-    </ul>
-    <div class="container" style="padding: 15px">
-      <!-- todo 状态筛选  -->
-
+  <el-tabs v-model="activeName" @tab-click="handleClick">
+    <el-tab-pane label="我的文章" name="first">
+      <div class="status-filter">
+        <el-tag>状态筛选</el-tag>
+        <el-tag>状态1</el-tag>
+        <el-tag>状态2</el-tag>
+        <el-tag>状态3</el-tag>
+        <el-tag>状态4</el-tag>
+        <el-badge class="item">
+          <el-button size="small">状态5</el-button>
+        </el-badge>
+      </div>
       <!--  todo 搜索栏   -->
-      <div class="list-group">
-        <div class="list-group-item list-group-item-action">
-          <div class="d-flex w-100 justify-content-between pb-2">
-            <h5 class="mb-1">
-              <a href="#">标题</a>
-            </h5>
-            <small>时间</small>
-          </div>
-          <p class="mb-2">
-            <span>标签1</span>
-            <span>标签2</span>
-            <span>标签3</span>
-            <span>标签4</span>
-          </p>
-          <div class="d-flex w-100 justify-content-between">
-            <small>展现量 2 阅读 4 评论 0 收藏 0</small>
-            <div>
-              <a href="">编辑</a> <a href="">浏览</a>
+      <div class="posts">
+        <div class="list-group">
+          <div class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between pb-2">
+              <h5 class="mb-1">
+                <a href="#">标题</a>
+              </h5>
+              <small>2021-08-15 11:54:40</small>
+            </div>
+            <p class="mb-2">
+              <span>标签1</span>
+              <span>标签2</span>
+              <span>标签3</span>
+              <span>标签4</span>
+            </p>
+            <div class="d-flex w-100 justify-content-between">
+              <small>展现量 2 阅读 4 评论 0 收藏 0</small>
+              <div><a href="">编辑</a> <a href="">浏览</a></div>
             </div>
           </div>
-        </div>
-        <div class="list-group-item list-group-item-action">
-          <div class="d-flex w-100 justify-content-between pb-2">
-            <h5 class="mb-1">
-              <a href="#">标题</a>
-            </h5>
-            <small>时间</small>
-          </div>
-          <p class="mb-2">
-            <span>标签1</span>
-            <span>标签2</span>
-            <span>标签3</span>
-            <span>标签4</span>
-          </p>
-          <div class="d-flex w-100 justify-content-between">
-            <small>展现量 2 阅读 4 评论 0 收藏 0</small>
-            <div>
-              <a href="">编辑</a> <a href="">浏览</a>
+          <div class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between pb-2">
+              <h5 class="mb-1">
+                <a href="#">标题</a>
+              </h5>
+              <small>2021-08-15 11:54:40</small>
+            </div>
+            <p class="mb-2">
+              <span>标签1</span>
+              <span>标签2</span>
+              <span>标签3</span>
+              <span>标签4</span>
+            </p>
+            <div class="d-flex w-100 justify-content-between">
+              <small>展现量 2 阅读 4 评论 0 收藏 0</small>
+              <div><a href="">编辑</a> <a href="">浏览</a></div>
             </div>
           </div>
         </div>
       </div>
-      <!--  分页    -->
-      <div class="row pt-5">
-      <Pagination :page=1 :total="1000" />
-      </div>
-    </div>
-  </div>
+    </el-tab-pane>
+    <el-tab-pane label="收藏文章" name="second">Config</el-tab-pane>
+  </el-tabs>
 </template>
 
-<script>
-import Pagination from '../common/Pagination'
-
+<script lang="ts">
 export default {
-  name:"Posts",
-  components:{
-    Pagination
-  },  
-  data(){
+  data() {
     return {
-
-    }
-  }
-}
+      activeName: "first",
+    };
+  },
+  methods: {
+    handleClick(tab, event) {
+      console.log(tab, event);
+    },
+  },
+};
 </script>
 
 <style scoped>
+.el-tag + .el-tag,
+.status-filter .item {
+  margin-left: 10px;
+}
 .nav-item {
   padding-left: 15px;
   padding-right: 15px;

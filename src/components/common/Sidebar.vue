@@ -1,32 +1,31 @@
 <template>
-  <el-row class="sidebar" style="width:240px">
-    <el-col>
-      <el-menu
-        text-color="#black"
-        active-text-color="black"
-        background-color="white"
-        class="sidebar-menu"
-        default-active="1"
-        @open="handleOpen"
-        @close="handleClose"
-        router
-      >
-        <el-menu-item index="/">
-          <el-icon><icon-menu /></el-icon>
-          <span>首页</span>
-        </el-menu-item>
-        <el-sub-menu index="2">
-          <template #title>
-            <el-icon><location /></el-icon>
-            <span>管理</span>
-          </template>
-          <el-menu-item index="/user/posts">内容管理</el-menu-item>
-          <el-menu-item index="2-2">评论管理</el-menu-item>
-          <el-menu-item index="2-3">消息管理</el-menu-item>
-        </el-sub-menu>
-      </el-menu>
-    </el-col>
-  </el-row>
+  <div id="sidebar">
+    <el-menu
+      text-color="#black"
+      active-text-color="black"
+      background-color="white"
+      class="sidebar-menu"
+      default-active="2"
+      @open="handleOpen"
+      @close="handleClose"
+      router
+      style="height: 100%"
+    >
+      <el-menu-item index="/">
+        <el-icon :style="{ color: iconColor }"><home-filled /></el-icon>
+        <span>首页</span>
+      </el-menu-item>
+      <el-sub-menu index="/">
+        <template #title>
+          <el-icon :style="{ color: iconColor }"><trend-charts /></el-icon>
+          <span>管理</span>
+        </template>
+        <el-menu-item index="/user/posts">内容管理</el-menu-item>
+        <el-menu-item index="/">评论管理</el-menu-item>
+        <el-menu-item index="/">消息管理</el-menu-item>
+      </el-sub-menu>
+    </el-menu>
+  </div>
 </template>
 
 
@@ -35,12 +34,17 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { Location, Menu as IconMenu } from "@element-plus/icons";
+import { TrendCharts, HomeFilled } from "@element-plus/icons";
 
 export default defineComponent({
   components: {
-    Location,
-    IconMenu,
+    TrendCharts,
+    HomeFilled,
+  },
+  data() {
+    return {
+      iconColor: "#909399",
+    };
   },
   setup() {
     const handleOpen = (key, keyPath) => {
