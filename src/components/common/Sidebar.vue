@@ -3,7 +3,7 @@
     <el-menu
       text-color="#black"
       active-text-color="black"
-      background-color="white"
+      background-color="#f5f6f7"
       class="sidebar-menu"
       default-active="2"
       @open="handleOpen"
