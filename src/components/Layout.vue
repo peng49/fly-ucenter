@@ -4,7 +4,7 @@
   </el-row>
   <el-row id="app-conatiner">
     <el-col id="sidebar" :span="3"><Sidebar /></el-col>
-    <el-col :span="21">
+    <el-col id="content" :span="21">
       <main style="padding: 24px 0 0 24px">
         <router-view :key="key" />
       </main>
@@ -44,5 +44,15 @@ body{
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 99999;
+}
+#sidebar ul.sidebar-menu{
+  border: none !important;
+  margin: 24px;
+}
+#content {
+  margin-top: 24px;
+  padding: 15px 0 0 15px;
+  background: white;
 }
 </style>
