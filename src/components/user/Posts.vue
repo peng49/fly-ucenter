@@ -134,32 +134,8 @@ export default {
 }
 li.item {
   display: flex;
-  border-bottom: 1 px dotted #ddd;
+  border-bottom: 1px dotted #ddd;
   padding: 1rem 0 1rem 0;
-}
-
-.post {
-  border-bottom: 1 px dotted #ddd;
-  padding: 1rem 0 1rem 0;
-}
-.post > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.post .post-title{
-  -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    color: #999;
-    font-size: 14px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
 }
 
 .list-item-title {
@@ -178,12 +154,27 @@ li.item {
   font-size: 16px;
   color: #555666;
   margin-bottom: 16px;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
   flex-grow: 1;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  color: #999;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.list-item-title .post-title a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #555666;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 .list-item-title .time {
   min-width: 142px;
