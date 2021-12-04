@@ -7,7 +7,7 @@
       <el-input v-model="post.title" placeholder="请输入文章标题" />
     </el-col>
   </el-row>
-  <el-row style="margin-top:10px">
+  <el-row>
     <el-col :span="24"><div id="editor"></div></el-col>
   </el-row>
 </template>
@@ -15,24 +15,8 @@
 <script>
 import "@toast-ui/editor/dist/toastui-editor.css";
 
-import { Editor } from "@toast-ui/editor";
+import { Editor } from "@toast-ui/editor";    
 
-function CodeMirrorPlugin() {
-  return {
-    toHTMLRenderers: {
-      codeBlock: function (node) {
-        // helper.
-        return [
-          { type: "openTag", tagName: "pre", classNames: ["preClasses"] },
-          { type: "openTag", tagName: "code", attributes: ["codeAttrs"] },
-          { type: "html", content: node.literal },
-          { type: "closeTag", tagName: "code" },
-          { type: "closeTag", tagName: "pre" },
-        ];
-      },
-    },
-  };
-}
 
 export default {
   data(){
@@ -45,8 +29,7 @@ export default {
       el: document.querySelector("#editor"),
       previewStyle: "vertical",
       height: "800px",
-      initialValue: "content",
-      plugins: [CodeMirrorPlugin],
+      initialValue: "content"
     });
   },
 };
@@ -54,5 +37,8 @@ export default {
 
 
 
-<style>
+<style scoped>
+.el-row {
+  margin-bottom: 20px;
+}
 </style>
