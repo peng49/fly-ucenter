@@ -31,8 +31,13 @@ export default {
 };
 </script>
 <style>
-body{
+body {
   background: #f5f6f7 !important;
+}
+a {
+  color: #349edf;
+  text-decoration: none;
+  cursor: pointer;
 }
 #app {
   padding-top: 48px;
@@ -46,7 +51,7 @@ body{
   width: 100%;
   z-index: 99999;
 }
-#sidebar ul.sidebar-menu{
+#sidebar ul.sidebar-menu {
   border: none !important;
   margin: 24px;
 }

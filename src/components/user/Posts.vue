@@ -1,119 +1,80 @@
 <template>
-  <el-tabs v-model="activeName" @tab-click="handleClick">
-    <el-tab-pane label="我的文章" name="first">
-      <div class="status-filter">
-        <el-tag>状态筛选</el-tag>
-        <el-tag>状态1</el-tag>
-        <el-tag>状态2</el-tag>
-        <el-tag>状态3</el-tag>
-        <el-tag>状态4</el-tag>
-        <el-badge class="item">
-          <el-button size="small">状态5</el-button>
-        </el-badge>
-      </div>
-      <!--  todo 搜索栏   -->
-      <div class="posts">
-        <ul class="items">
-          <li class="item">
-            <div class="post">
-              <div class="list-item-title">
-                <p class="post-title"><a href="#">标题</a></p>
-                <p class="time">2021-08-15 11:54:40</p>
-              </div>
-              <div class="post-tags">
-                <span class="article-list-item-tag">草稿</span>
-              </div>
+  <el-row>
+    <el-col :span="23">
+      <el-tabs v-model="activeName" @tab-click="handleClick">
+        <el-tab-pane label="我的文章" name="first">
+          <div class="status-filter">
+            <el-tag>状态筛选</el-tag>
+            <el-tag>状态1</el-tag>
+            <el-tag>状态2</el-tag>
+            <el-tag>状态3</el-tag>
+            <el-tag>状态4</el-tag>
+            <el-badge class="item">
+              <el-button size="small">状态5</el-button>
+            </el-badge>
+          </div>
+          <!--  todo 搜索栏   -->
+          <div class="posts">
+            <ul class="items">
+              <li class="item">
+                <div class="post">
+                  <div class="list-item-title">
+                    <p class="post-title"><a href="#">标题</a></p>
+                    <p class="time">2021-08-15 11:54:40</p>
+                  </div>
+                  <div class="post-tags">
+                    <span class="post-tag">草稿</span>
+                  </div>
 
-              <div class="post-info">
-                <div class="item-info-left">
-                  <p class="article-list-item-readComment">
-                    展现量 0
-                    <svg
-                      width="200"
-                      height="200"
-                      viewBox="0 0 1024 1024"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="icon"
-                    >
-                      <path
-                        d="M512 992.5C246.62 992.5 31.5 777.38 31.5 512S246.62 31.5 512 31.5 992.5 246.62 992.5 512 777.38 992.5 512 992.5zm0-96.1a384.4 384.4 0 100-768.8 384.4 384.4 0 000 768.8zM324.605 388.271c0-23.496 7.544-47.281 22.584-71.354 15.087-24.121 37.094-44.062 66.02-59.87 28.926-15.857 62.657-23.737 101.194-23.737 35.845 0 67.462 6.63 94.898 19.845 27.389 13.213 48.627 31.232 63.57 53.912 14.944 22.727 22.44 47.473 22.44 74.14 0 20.999-4.277 39.402-12.782 55.258-8.552 15.809-18.691 29.455-30.415 40.939-11.724 11.532-32.818 30.848-63.186 58.044-8.409 7.64-15.136 14.415-20.181 20.181-5.093 5.766-8.89 11.148-11.34 15.953a78.464 78.464 0 00-5.766 14.415c-1.345 4.853-3.363 13.31-6.102 25.467-4.709 25.658-19.412 38.488-44.11 38.488a45.119 45.119 0 01-32.434-12.59c-8.793-8.408-13.165-20.853-13.165-37.43 0-20.758 3.219-38.729 9.61-53.96a136.942 136.942 0 0125.61-40.026c10.62-11.484 24.986-25.13 43.005-40.939 15.856-13.838 27.244-24.313 34.308-31.328 7.015-7.064 12.973-14.896 17.778-23.545 4.805-8.649 7.208-18.019 7.208-28.157 0-19.797-7.352-36.47-22.055-50.068-14.704-13.599-33.635-20.374-56.891-20.374-27.197 0-47.186 6.872-60.063 20.566-12.83 13.694-23.737 33.923-32.626 60.59-8.409 27.966-24.313 41.9-47.81 41.9a46.993 46.993 0 01-35.028-14.655c-9.514-9.754-14.271-20.325-14.271-31.713zm180.908 406.263c-15.087 0-28.253-4.853-39.497-14.607-11.244-9.802-16.817-23.449-16.817-40.987 0-15.568 5.381-28.686 16.289-39.305 10.859-10.57 24.217-15.904 40.025-15.904 15.568 0 28.638 5.285 39.305 15.904 10.571 10.62 15.905 23.737 15.905 39.305 0 17.298-5.526 30.896-16.674 40.795a56.267 56.267 0 01-38.536 14.799z"
-                      ></path>
-                    </svg>
-                    <span class="tip"
-                      >内容被用户看到的次数，统计范围为全站（PC、APP、WAP），每日更新，仅支持统计
-                      2021年3月15日之后的数据</span
-                    >
-                  </p>
-                  <span class="circle-step"></span>
-                  <p class="article-list-item-readComment">阅读 0</p>
-                  <span class="circle-step"></span>
-                  <p class="article-list-item-readComment">评论 0</p>
-                  <span class="circle-step"></span>
-                  <p class="article-list-item-readComment">收藏 0</p>
-                  <!---->
-                </div>
-                <div class="item-info-oper">
-                  <!----><!----><!----><a
-                    href="https://editor.csdn.net/md/?articleId=119711793"
-                    target="_blank"
-                    ><span class="item-info-oper-text">编辑</span></a
-                  ><a
-                    data-report-click='{"spm":"1011.2124.3001.5331"}'
-                    href="https://blog.csdn.net/peng49/article/details/119711793"
-                    target="_blank"
-                    ><span class="item-info-oper-text">浏览</span></a
-                  >
-                  <div class="el-dropdown">
-                    <span
-                      class="item-move comm-icon el-dropdown-selfdefine"
-                      aria-haspopup="list"
-                      aria-controls="dropdown-menu-2791"
-                      role="button"
-                      tabindex="0"
-                    ></span>
-                    <ul
-                      class="el-dropdown-menu el-popper activeItem"
-                      id="dropdown-menu-2791"
-                      style="display: none"
-                    >
-                      <li tabindex="-1" class="el-dropdown-menu__item">
-                        <!---->
-                      </li>
-                      <li tabindex="-1" class="el-dropdown-menu__item">
-                        <!---->
-                      </li>
-                      <!----><!---->
-                      <li tabindex="-1" class="el-dropdown-menu__item">
-                        <!---->
-                      </li>
+                  <div class="post-info">
+                    <div class="item-info-left">
+                      <p class="article-list-item-readComment">展现量 0</p>
+                      <span class="circle-step"></span>
+                      <p class="article-list-item-readComment">阅读 0</p>
+                      <span class="circle-step"></span>
+                      <p class="article-list-item-readComment">评论 0</p>
+                      <span class="circle-step"></span>
+                      <p class="article-list-item-readComment">收藏 0</p>
                       <!---->
-                      <li tabindex="-1" class="el-dropdown-menu__item">
-                        <!---->
-                        <div class="item-info-inline">
-                          <a
-                            href="javascript:void(0);"
-                            class="item-right-border"
-                            ><span class="del item-info-oper-text"
-                              >删除</span
-                            ></a
-                          >
-                        </div>
-                      </li>
-                    </ul>
+                    </div>
+                    <div class="item-info-oper">
+                      <!----><!----><!----><a
+                        href="https://editor.csdn.net/md/?articleId=119711793"
+                        target="_blank"
+                        ><span class="item-info-oper-text">编辑</span></a
+                      ><a
+                        data-report-click='{"spm":"1011.2124.3001.5331"}'
+                        href="https://blog.csdn.net/peng49/article/details/119711793"
+                        target="_blank"
+                        ><span class="item-info-oper-text">浏览</span></a
+                      >
+                      <el-dropdown placement="bottom-end">
+                        <span class="el-dropdown-link">
+                          <el-icon><more-filled /></el-icon>
+                        </span>
+                        <template #dropdown>
+                          <el-dropdown-menu>
+                            <el-dropdown-item>删除</el-dropdown-item>
+                          </el-dropdown-menu>
+                        </template>
+                      </el-dropdown>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </el-tab-pane>
-    <el-tab-pane label="收藏文章" name="second">Config</el-tab-pane>
-  </el-tabs>
+              </li>
+            </ul>
+          </div>
+        </el-tab-pane>
+        <el-tab-pane label="收藏文章" name="second">Config</el-tab-pane>
+      </el-tabs>
+    </el-col>
+  </el-row>
 </template>
 
 <script lang="ts">
+import { MoreFilled } from "@element-plus/icons";
 export default {
+  components: { MoreFilled },
   data() {
     return {
       activeName: "first",
@@ -132,13 +93,31 @@ export default {
 .status-filter .item {
   margin-left: 10px;
 }
+ul.items {
+  padding: 0;
+  margin: 0;
+}
 li.item {
   display: flex;
   border-bottom: 1px dotted #ddd;
   padding: 1rem 0 1rem 0;
 }
+li.item .post {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  color: #999;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
 
-.list-item-title {
+li.item .post .list-item-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -150,24 +129,18 @@ li.item {
   -ms-flex-pack: start;
   justify-content: flex-start;
 }
-.list-item-title .post-title {
+li.item .post .list-item-title .post-title {
   font-size: 16px;
   color: #555666;
   margin-bottom: 16px;
-  flex-grow: 1;
   -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  color: #999;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
-.list-item-title .post-title a {
+li.item .post .list-item-title .post-title a {
   font-size: 16px;
   font-weight: 500;
   color: #555666;
@@ -176,8 +149,104 @@ li.item {
   word-wrap: break-word;
   word-break: break-word;
 }
-.list-item-title .time {
+li.item .post .list-item-title .time {
   min-width: 142px;
   text-align: right;
+}
+
+.post-tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 12px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.post-tag {
+  font-size: 12px;
+  height: 18px;
+  margin-right: 8px;
+  padding: 0 4px;
+  background: #f5f5f5;
+  color: #999aaa;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.post-info {
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.post-info .item-info-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.article-list-item-readComment:first-child {
+  margin-left: 0;
+}
+.article-list-item-readComment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 8px;
+  position: relative;
+}
+.article-list-item-readComment svg {
+  fill: #999;
+  width: 14px;
+  height: 14px;
+  margin-left: 4px;
+}
+.circle-step {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  background: #555666;
+  vertical-align: middle;
+  border-radius: 50%;
+  color: #999aaa;
+}
+.item-info-oper-text {
+  color: #222226;
+  padding: 0 12px;
+  cursor: pointer;
+}
+.el-dropdown {
+  width: 27px;
+  background-position: -145px -45px;
+  margin-left: 12px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  color: #606266;
+  font-size: 14px;
 }
 </style>
