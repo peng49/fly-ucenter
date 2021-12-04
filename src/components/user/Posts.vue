@@ -38,16 +38,12 @@
                       <!---->
                     </div>
                     <div class="item-info-oper">
-                      <!----><!----><!----><a
-                        href="https://editor.csdn.net/md/?articleId=119711793"
-                        target="_blank"
-                        ><span class="item-info-oper-text">编辑</span></a
-                      ><a
-                        data-report-click='{"spm":"1011.2124.3001.5331"}'
-                        href="https://blog.csdn.net/peng49/article/details/119711793"
-                        target="_blank"
-                        ><span class="item-info-oper-text">浏览</span></a
-                      >
+                      <a href="/#/post/edit" target="_blank">
+                        <span class="item-info-oper-text">编辑</span>
+                      </a>
+                      <a href="#" target="_blank">
+                        <span class="item-info-oper-text">浏览</span>
+                      </a>
                       <el-dropdown placement="bottom-end">
                         <span class="el-dropdown-link">
                           <el-icon><more-filled /></el-icon>

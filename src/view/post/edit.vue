@@ -1,24 +1,15 @@
 <template>
-  <div class="container-full">
-    <div class="row">
-      <div class="col-1">
+  <el-row>
+    <el-col :span="2">
         <a href="">文章管理</a>
-      </div>
-      <div class="col-9">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="请输入标题"
-          value=""
-          required="true"
-        />
-      </div>
-      <div class="coo-2"></div>
-    </div>
-    <div class="row">
-      <div id="editor">1</div>
-    </div>
-  </div>
+    </el-col>
+    <el-col :span="20">
+      <el-input v-model="post.title" placeholder="请输入文章标题" />
+    </el-col>
+  </el-row>
+  <el-row style="margin-top:10px">
+    <el-col :span="24"><div id="editor"></div></el-col>
+  </el-row>
 </template>
 
 <script>
@@ -44,11 +35,16 @@ function CodeMirrorPlugin() {
 }
 
 export default {
+  data(){
+    return {
+      post:{title:""}
+    }
+  },
   mounted() {
     new Editor({
       el: document.querySelector("#editor"),
       previewStyle: "vertical",
-      height: "700px",
+      height: "800px",
       initialValue: "content",
       plugins: [CodeMirrorPlugin],
     });
