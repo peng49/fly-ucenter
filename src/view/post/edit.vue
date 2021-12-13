@@ -7,12 +7,20 @@
       <el-input v-model="post.title" placeholder="请输入文章标题" />
     </el-col>
   </el-row>
-  <el-row>
-    <el-col :span="24" style="min-height: 700px">
-        <div id="editor"><textarea></textarea></div>
+  <el-row style="height: 85vh">
+    <el-col :span="24">
+        <div id="editor"><textarea>内容</textarea></div>
     </el-col>
   </el-row>  
 </template>
+
+<style>
+.editormd-menu li a::after{
+  content: attr(title);
+  font-size: 12px;
+  display: block;
+}
+</style>
 
 <script>
 import jQuery from "jquery";
@@ -38,12 +46,7 @@ export default {
       });
     });
     //加载css
-    $("head").append(
-      $('<link rel="stylesheet" type="text/css" />').attr(
-        "href",
-        "/static/editor.md/css/editormd.min.css"
-      )
-    );
+    $("head").append('<link rel="stylesheet" type="text/css" href="/static/editor.md/css/editormd.min.css" />');
   },
 };
 </script>
