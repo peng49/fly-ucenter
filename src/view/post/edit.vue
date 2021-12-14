@@ -42,7 +42,28 @@ export default {
         saveHTMLToTextarea: true,
         height: "100%",
         watch: true,
-        placeholder:'请输入内容'
+        placeholder:'请输入内容',
+        onload:function(){
+          //重写样式
+          let styleCode = '';
+
+          `{
+              content: '内容';
+              display: block;
+              font-size: 12px;
+              font-weight: 100;
+              margin-top: 14px;
+          }`
+          console.log($('.editormd-menu li a'))
+          let icons = $('.editormd-menu li a')
+          icons.each(i => {
+            let cls = icons.eq(i).find('i').attr('class')
+            let title = icons.eq(i).attr('title')
+            let name = icons.eq(i).find('i').attr('name')
+            console.log('.editormd-menu li a i.'+cls.replace(' ','.')+'[name='+name+']::after',title,styleCode)
+          })
+
+        }
       });
     });
     //加载css
