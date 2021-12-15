@@ -55,6 +55,13 @@ export default {
             let name = icons.eq(i).find("i").attr("name");
 
             let map = {
+              undo: "撤销",
+              redo: "重做",
+              'list-ul': "无序",
+              'list-ol': "有序",
+              'preformatted-text': "代码块",
+              'code-block': "代码块",          
+              image: "图片",
               ucwords: "大写",
               uppercase: "大写",
               lowercase: "小写",
