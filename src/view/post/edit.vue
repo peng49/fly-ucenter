@@ -7,7 +7,7 @@
       <el-input v-model="post.title" placeholder="请输入文章标题" />
     </el-col>
   </el-row>
-  <el-row style="height: 85vh">
+  <el-row style="height: 80vh">
     <el-col :span="24">
       <div id="editor"><textarea>内容</textarea></div>
     </el-col>
@@ -39,11 +39,14 @@ export default {
         placeholder: "请输入内容",
         onload: function () {
           //重写样式
-          let styleCode = `.editormd-menu li a i::after{
+          let styleCode = `.editormd-menu li a i::after {
             display: block;
             font-size: 12px;
             font-weight: 100;
             margin-top: 14px;
+          }
+          .editormd-menu li a i.fa.fa-eye[name=watch]::after {
+            content: '关闭预览';
           }`;
 
           let style = document.createElement("style");
@@ -55,16 +58,22 @@ export default {
             let name = icons.eq(i).find("i").attr("name");
 
             let map = {
-              undo: "撤销",
-              redo: "重做",
+              'undo': "撤销",
+              'redo': "重做",
               'list-ul': "无序",
               'list-ol': "有序",
               'preformatted-text': "代码块",
               'code-block': "代码块",          
-              image: "图片",
-              ucwords: "大写",
-              uppercase: "大写",
-              lowercase: "小写",
+              'image': "图片",
+              'ucwords': "大写",
+              'uppercase': "大写",
+              'lowercase': "小写",
+              'emoji': "表情",
+              'html-entities': "实体",
+              'watch': "关闭",
+              'preview': "预览",
+              'fullscreen': "全屏",
+              'info': "关于",
             };
             title = map[name] ? map[name] : title;
 
