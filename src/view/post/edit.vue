@@ -1,9 +1,9 @@
 <template>
   <el-row>
     <el-col :span="2">
-      <a class="back" href="#"
-        ><el-icon><arrow-left-bold /></el-icon>文章管理</a
-      >
+      <a class="back" href="#">
+        <el-icon><arrow-left-bold /></el-icon>&nbsp;文章管理
+      </a>
     </el-col>
     <el-col :span="18">
       <el-input

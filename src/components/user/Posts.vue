@@ -14,6 +14,27 @@
             </el-badge>
           </div>
           <!--  todo 搜索栏   -->
+          <el-row style="margin:10px 0">
+            <el-col :span="2">
+              <el-select size="small" v-model="search.year">
+                <el-option
+                  v-for="item in [{ year: 2021 }]"
+                  :key="item.year"
+                  :label="item.year+'年'"
+                ></el-option>
+              </el-select>
+            </el-col>
+               <el-col :span="1">
+              <el-select size="small" v-model="search.month">
+                <el-option
+                  v-for="item in [{ month: 1 }]"
+                  :key="item.month"
+                  :label="item.month+'月'"
+                ></el-option>
+              </el-select>
+            </el-col>
+          </el-row>
+
           <div class="posts">
             <ul class="items">
               <li class="item">
@@ -73,6 +94,7 @@ export default {
   components: { MoreFilled },
   data() {
     return {
+      search: { year: "" },
       activeName: "first",
     };
   },
