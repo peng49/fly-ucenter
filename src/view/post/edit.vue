@@ -1,10 +1,22 @@
 <template>
   <el-row>
     <el-col :span="2">
-      <a href="">文章管理</a>
+      <a class="back" href="#"
+        ><el-icon><arrow-left-bold /></el-icon>文章管理</a
+      >
     </el-col>
-    <el-col :span="20">
-      <el-input v-model="post.title" placeholder="请输入文章标题" />
+    <el-col :span="18">
+      <el-input
+        class="radius"
+        v-model="post.title"
+        placeholder="请输入文章标题"
+      />
+    </el-col>
+    <el-col :span="2" style="text-align: center">
+      <el-button class="radius" type="defalut">保存草稿</el-button>
+    </el-col>
+    <el-col :span="2">
+      <el-button class="radius" type="success">发布文章</el-button>
     </el-col>
   </el-row>
   <el-row style="height: 80vh">
@@ -14,13 +26,33 @@
   </el-row>
 </template>
 
+<style>
+.radius input {
+  border-radius: 20px;
+  font-size: large;
+  text-indent: 5px;
+}
+</style>
 
+<style scoped>
+.back {
+  display: block;
+  line-height: 40px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
+}
+.radius {
+  border-radius: 20px;
+}
+</style>
 
 <script>
 import jQuery from "jquery";
 const $ = (window.$ = window.jQuery = jQuery);
-
+import { ArrowLeftBold } from "@element-plus/icons";
 export default {
+  components: { ArrowLeftBold },
   data() {
     return {
       editor: null,
@@ -58,22 +90,22 @@ export default {
             let name = icons.eq(i).find("i").attr("name");
 
             let map = {
-              'undo': "撤销",
-              'redo': "重做",
-              'list-ul': "无序",
-              'list-ol': "有序",
-              'preformatted-text': "代码块",
-              'code-block': "代码块",          
-              'image': "图片",
-              'ucwords': "大写",
-              'uppercase': "大写",
-              'lowercase': "小写",
-              'emoji': "表情",
-              'html-entities': "实体",
-              'watch': "关闭",
-              'preview': "预览",
-              'fullscreen': "全屏",
-              'info': "关于",
+              undo: "撤销",
+              redo: "重做",
+              "list-ul": "无序",
+              "list-ol": "有序",
+              "preformatted-text": "代码块",
+              "code-block": "代码块",
+              image: "图片",
+              ucwords: "大写",
+              uppercase: "大写",
+              lowercase: "小写",
+              emoji: "表情",
+              "html-entities": "实体",
+              watch: "关闭",
+              preview: "预览",
+              fullscreen: "全屏",
+              info: "关于",
             };
             title = map[name] ? map[name] : title;
 
@@ -82,7 +114,7 @@ export default {
 
           style.innerHTML = styleCode;
           $("head").append(style);
-          $(window).resize()
+          $(window).resize();
         },
       });
     });
