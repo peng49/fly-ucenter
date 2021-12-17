@@ -4,32 +4,51 @@
       <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane label="我的文章" name="first">
           <div class="status-filter">
-            <el-tag>状态筛选</el-tag>
-            <el-tag>状态1</el-tag>
-            <el-tag>状态2</el-tag>
-            <el-tag>状态3</el-tag>
-            <el-tag>状态4</el-tag>
-            <el-badge class="item">
-              <el-button size="small">状态5</el-button>
-            </el-badge>
+            <el-row>
+              <el-col :span="1">
+                <el-link :underline="false" type="info"> 状态</el-link>
+              </el-col>
+              <el-col :span="1">
+                <el-link :underline="false"> 全部 (0)</el-link>
+              </el-col>
+              <el-col :span="1">
+                <el-link :underline="false">公开 (0)</el-link>
+              </el-col>
+              <el-col :span="1">
+                <el-link :underline="false">私密 (0)</el-link>
+              </el-col>
+              <el-col :span="1">
+                <el-link :underline="false">审核 (0)</el-link>
+              </el-col>
+              <el-col :span="1">
+                <el-link :underline="false">草稿 (0)</el-link>
+              </el-col>
+              <el-col :span="1">
+                <el-link :underline="false">回收站 (0)</el-link>
+              </el-col>
+            </el-row>
           </div>
           <!--  todo 搜索栏   -->
-          <el-row style="margin:10px 0">
+          <el-row style="margin: 20px 0">
             <el-col :span="2">
-              <el-select size="small" v-model="search.year">
+              <el-select
+                style="margin-right: 15px"
+                size="small"
+                v-model="search.year"
+              >
                 <el-option
                   v-for="item in [{ year: 2021 }]"
                   :key="item.year"
-                  :label="item.year+'年'"
+                  :label="item.year + '年'"
                 ></el-option>
               </el-select>
             </el-col>
-               <el-col :span="1">
+            <el-col :span="2">
               <el-select size="small" v-model="search.month">
                 <el-option
                   v-for="item in [{ month: 1 }]"
                   :key="item.month"
-                  :label="item.month+'月'"
+                  :label="item.month + '月'"
                 ></el-option>
               </el-select>
             </el-col>
