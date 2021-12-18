@@ -43,8 +43,8 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
-#app {
-  padding-top: 48px;
+div#app-conatiner{
+  margin-top: 48px;  
 }
 #header {
   height: 48px;

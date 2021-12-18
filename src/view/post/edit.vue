@@ -1,5 +1,5 @@
 <template>
-  <el-row>
+  <el-row style="margin: 20px 0">
     <el-col :span="2">
       <a class="back" href="#">
         <el-icon><arrow-left-bold /></el-icon>&nbsp;文章管理
