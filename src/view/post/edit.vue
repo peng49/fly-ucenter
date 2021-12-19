@@ -21,7 +21,7 @@
   </el-row>
   <el-row style="height: 80vh">
     <el-col :span="24">
-      <div id="editor"><textarea>内容</textarea></div>
+      <div id="editor" style="border-left:none;border-right:none;"><textarea>内容</textarea></div>
     </el-col>
   </el-row>
 </template>
