@@ -126,6 +126,9 @@ export default {
 </script>
 
 <style scoped>
+.el-tabs__nav-wrap::after{
+  content: none;
+}
 .el-tag + .el-tag,
 .status-filter .item {
   margin-left: 10px;

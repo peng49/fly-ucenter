@@ -31,11 +31,9 @@ export default {
 };
 </script>
 <style>
-* {
+body {
   font-family: PingFang SC, Hiragino Sans GB, Arial, Microsoft YaHei, Verdana,
     Roboto, Noto, Helvetica Neue, sans-serif !important;
-}
-body {
   background: #f5f6f7 !important;
 }
 a {
@@ -43,8 +41,8 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
-div#app-conatiner{
-  margin-top: 48px;  
+div#app-conatiner {
+  margin-top: 48px;
 }
 #header {
   height: 48px;

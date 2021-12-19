@@ -8,7 +8,7 @@ module.exports = {
             })
     },
     //https://blog.csdn.net/weixin_43518405/article/details/120299406
-    configureWebpack:{
+    configureWebpack: {
         module: {
             rules: [
                 {
