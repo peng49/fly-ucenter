@@ -52,11 +52,14 @@ div#app-conatiner {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 99999;
+  z-index: 999;
 }
 #header header {
   height: 100%;
   padding-left: 15px;
+}
+#sidebar {
+  margin-top: 24px;
 }
 #sidebar ul.sidebar-menu {
   border: none !important;

@@ -1,5 +1,10 @@
 <template>
-  <div id="sidebar">
+  <div>
+    <div style="text-align: center">
+      <router-link :to="{path:'/post/edit'}">
+        <el-button type="danger" round>写文章</el-button>
+      </router-link>      
+    </div>
     <el-menu
       text-color="#black"
       active-text-color="black"
@@ -57,6 +62,11 @@ export default defineComponent({
       handleOpen,
       handleClose,
     };
+  },
+  methods: {
+    open(url) {
+      window.open(url);
+    },
   },
 });
 </script>

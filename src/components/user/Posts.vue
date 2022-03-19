@@ -56,8 +56,10 @@
 
           <div class="posts">
             <ul class="items">
-              <li class="item">
+              <li v-for="post in posts" v-bind:key="post.id" class="item">
                 <div class="post">
+
+                  {{post.title}}
                   <div class="list-item-title">
                     <p class="post-title"><a href="#">标题</a></p>
                     <p class="time">2021-08-15 11:54:40</p>
@@ -109,24 +111,32 @@
 
 <script lang="ts">
 import { MoreFilled } from "@element-plus/icons";
+import {queryPosts} from "@/api/post";
 export default {
   components: { MoreFilled },
   data() {
     return {
       search: { year: "" },
       activeName: "first",
+      posts: [],
     };
+  },
+  mounted(){
+      this.renderList()
   },
   methods: {
     handleClick(tab, event) {
       console.log(tab, event);
+    },
+    renderList() {
+      queryPosts({});
     },
   },
 };
 </script>
 
 <style scoped>
-.el-tabs__nav-wrap::after{
+.el-tabs__nav-wrap::after {
   content: none;
 }
 .el-tag + .el-tag,
