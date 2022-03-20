@@ -57,11 +57,9 @@
           <div class="posts">
             <ul class="items">
               <li v-for="post in posts" v-bind:key="post.id" class="item">
-                <div class="post">
-
-                  {{post.title}}
+                <div class="post">                  
                   <div class="list-item-title">
-                    <p class="post-title"><a href="#">标题</a></p>
+                    <p class="post-title"><a href="#">{{ post.title }}</a></p>
                     <p class="time">2021-08-15 11:54:40</p>
                   </div>
                   <div class="post-tags">
@@ -80,9 +78,7 @@
                       <!---->
                     </div>
                     <div class="item-info-oper">
-                      <a href="/#/post/edit" target="_blank">
-                        <span class="item-info-oper-text">编辑</span>
-                      </a>
+                      <router-link :to="{path:'/post/edit/'+post.id}"><span class="item-info-oper-text">编辑</span></router-link>
                       <a href="#" target="_blank">
                         <span class="item-info-oper-text">浏览</span>
                       </a>
@@ -111,7 +107,7 @@
 
 <script lang="ts">
 import { MoreFilled } from "@element-plus/icons";
-import {queryPosts} from "@/api/post";
+import { queryPosts } from "@/api/post";
 export default {
   components: { MoreFilled },
   data() {
@@ -121,15 +117,17 @@ export default {
       posts: [],
     };
   },
-  mounted(){
-      this.renderList()
+  mounted() {
+    this.renderList();
   },
   methods: {
     handleClick(tab, event) {
       console.log(tab, event);
     },
     renderList() {
-      queryPosts({});
+      queryPosts({}).then(resp => {
+        this.posts = resp.data.rows
+      });
     },
   },
 };
